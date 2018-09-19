@@ -1,5 +1,8 @@
 var app = require("express")();
 var jade = require("jade");
+var morgan = require("morgan");
+
+app.use(morgan("tiny"));
 
 app.set("view engine", jade);
 app.set("views", __dirname+'/views');
