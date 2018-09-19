@@ -14,6 +14,17 @@ app.get("/", function(req, res){
 app.post("/login", function(req, res){
     if(req.body){
         console.log(req.body);
+        
+        mongoUtil.remove({"username" : req.body.username});
+
+        // mongoUtil.insert(req.body);
+        
+        // mongoUtil.checkUser(req.body.username, req.body.password);
+
+        // var users = mongoUtil.find();
+        // users.find().toArray(function(err, docs){
+        //     console.log(docs);
+        // })
     }
     res.send("Data Received.");
 });
