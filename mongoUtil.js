@@ -54,5 +54,11 @@ module.exports.remove = function(key){
     })
 }
 
-module.exports.update = function(){}
+module.exports.update = function(username, password){
+    _db.collection("users").updateOne({ "username" : username }
+      , { $set: { "password" : password } }, function(err, result) {
+        if(err) console.log(err);
+        console.log("User record updated.", result);
+    });  
+}
 

@@ -14,8 +14,10 @@ app.get("/", function(req, res){
 app.post("/login", function(req, res){
     if(req.body){
         console.log(req.body);
+       
+        mongoUtil.update(req.body.username, req.body.password);
         
-        mongoUtil.remove({"username" : req.body.username});
+        // mongoUtil.remove({"username" : req.body.username});
 
         // mongoUtil.insert(req.body);
         
