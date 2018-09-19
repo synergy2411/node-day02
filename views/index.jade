@@ -1,0 +1,17 @@
+html
+    head
+        title Jade Demo
+    body
+        h1 Hello #{name}
+        .container  
+            p Inside Container 
+            - var fname = "FooBar"
+            if fname == "Foo"
+                h1= fname
+            else
+                h3= fname
+        form(action="http://localhost:9000")
+            input(type="text", placeholder="Enter Value")
+        select
+            each friend, i in friends
+                option(value=i) #{friend}
