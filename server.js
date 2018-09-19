@@ -2,8 +2,9 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoUtil = require("./mongoUtil");
+var mongooseUtil =  require("./mongooseUtil");
 
-mongoUtil.connect();
+// mongoUtil.connect();
 
 app.use(bodyParser.urlencoded({extended : true}));
 
@@ -15,7 +16,7 @@ app.post("/login", function(req, res){
     if(req.body){
         console.log(req.body);
        
-        mongoUtil.update(req.body.username, req.body.password);
+        // mongoUtil.update(req.body.username, req.body.password);
         
         // mongoUtil.remove({"username" : req.body.username});
 
